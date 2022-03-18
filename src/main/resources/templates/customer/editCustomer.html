@@ -1,0 +1,61 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" th:href="@{webjars/bootstrap/4.2.1/css/bootstrap.min.css}"/>
+    <link rel="stylesheet" th:href="@{/css/main.css}"/>
+
+</head>
+<body class="app sidebar-mini">
+<!-- Navbar-->
+<header class="app-header"><a class="app-header__logo" href="#">CRM</a>
+
+    <!-- Navbar Right Menu-->
+</header>
+<!-- Sidebar menu-->
+<div class="app-sidebar__overlay" data-toggle="sidebar"></div>
+<aside class="app-sidebar">
+    <ul class="app-menu">
+        <li><a class="app-menu__item" th:href="@{/customer/details}"><span class="app-menu__label"> Home page</span></a></li>
+        <li><a class="app-menu__item" th:href="@{/customer/add}"><span class="app-menu__label"> Add Customer</span></a></li>
+    </ul>
+</aside>
+<main class="app-content">
+
+<h3 class="tile-title">Update/Delete customer</h3>
+<form action=# th:action="@{{id}(id=${persons.id})}" th:object="${persons}"
+      method="post">
+
+    <h4 class="tile-title">Customers</h4>
+    <fieldset >
+        <p>
+            Firstname: <input class="form-control" type="text" th:field="*{firstName}" />
+        </p>
+        <p>
+            Lastname: <input class="form-control" type="text" th:field="*{lastName}" />
+        </p>
+        <p>
+            Email: <input class="form-control" type="text" th:field="*{email}" />
+        </p>
+    </fieldset>
+
+    <div class="tile-footer">
+        <p>
+            <input class="form-control" type="submit" value="Save changes" />
+        </p>
+    </div>
+
+</form>
+
+<form action=# th:action="@{/customer/delete/{id}(id=${persons.id})}"
+      method="post">
+<div class="tile-footer">
+    <p>
+        <input class="form-control" type="submit" value="Delete record" />
+    </p>
+</div>
+</form>
+</main>
+</body>
+</html>

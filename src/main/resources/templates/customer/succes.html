@@ -1,0 +1,51 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" th:href="@{webjars/bootstrap/4.2.1/css/bootstrap.min.css}"/>
+    <link rel="stylesheet" th:href="@{/css/main.css}"/>
+
+</head>
+<body class="app sidebar-mini">
+<!-- Navbar-->
+<header class="app-header"><a class="app-header__logo" href="#">CRM</a>
+    <!-- Navbar Right Menu-->
+</header>
+<!-- Sidebar menu-->
+<div class="app-sidebar__overlay" data-toggle="sidebar"></div>
+<aside class="app-sidebar">
+    <ul class="app-menu">
+        <li><a class="app-menu__item" th:href="@{/customer/details}"><span class="app-menu__label"> Home page</span></a></li>
+        <li><a class="app-menu__item" th:href="@{/customer/add}"><span class="app-menu__label"> Add Customer</span></a></li>
+    </ul>
+</aside>
+<main class="app-content">
+
+
+    <div class="app-title">
+        <div>
+            <h1>
+                <i class="fa fa-dashboard"></i> Success
+            </h1>
+            <p></p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="tile">
+                <div class="row">
+                    <div class="col-lg-6">
+
+                        Changes have been saved.
+
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</main>
+</body>
+</html>
